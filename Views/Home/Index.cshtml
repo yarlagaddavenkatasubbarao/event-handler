@@ -1,0 +1,217 @@
+﻿@model IEnumerable<ISC567Web.Models.EventCategory>
+@{
+    ViewData["Title"] = "Home Page";
+}
+<head>
+    <link href="~/css/StyleSheet.css" rel="stylesheet" />
+    <style>
+        h1 {
+            text-align: center;
+        }
+        .mySlides {
+            display: none;
+
+        }
+
+    </style>
+</head>
+
+<body>
+    <br />
+     <h1 class="title"><strong> Mobile Alabama Events</strong></h1>
+    <br />
+</body>
+
+@*<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+    .mySlides {
+        display: none;
+    }
+</style>
+<body>
+
+
+
+@*<head>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+            .mySlides {
+                display: none;
+            }
+        </style>
+    </head>*@
+
+    <body>
+
+      
+            
+        
+                <div class="w3-content w3-section" style="max-width:800px">
+                    <img class="mySlides" src="/images/1.jpg" style="width:100%">
+                    <img class="mySlides" src="/images/2.jpg" style="width:100%">
+                    <img class="mySlides" src="/images/3.jpg" style="width:100%">
+                    <img class="mySlides" src="/images/4.jpg" style="width:100%">
+                    <img class="mySlides" src="/images/5.jpg" style="width:100%">
+                </div>
+                
+           
+
+                <script>
+                    var myIndex = 0;
+                    carousel();
+
+                    function carousel() {
+                        var i;
+                        var x = document.getElementsByClassName("mySlides");
+                        for (i = 0; i < x.length; i++) {
+                            x[i].style.display = "none";
+                        }
+                        myIndex++;
+                        if (myIndex > x.length) { myIndex = 1 }
+                        x[myIndex - 1].style.display = "block";
+                        setTimeout(carousel, 2000); // Change image every 2 seconds
+                    }
+                </script>
+</body>
+
+<div class="w3-content w3-display-container" align="center">
+    <br />
+    <br />
+    <br />
+    <div class="container">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta content="text/html; charset=iso-8859-2" http-equiv="Content-Type">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        @*<style>
+            .mySlides {
+                display: none;
+            }
+        </style>*@
+
+        <div class="imagecontainer">
+            <a href="/EventCategories/Data/1">
+                <img src="/images/tourism.jpg" alt="img" class="image" >
+                <div class="overlay overlayFade">
+
+                    <div class="text">Tourism</div>
+                </div>
+            </a>
+        </div>
+
+        <div class="imagecontainer">
+            <a href="/EventCategories/Data/2">
+                <img src="/images/art.jpg" alt="img" class="image">
+                <div class="overlay overlayFade">
+                    <div class="text">Arts & Culture</div>
+                </div>
+            </a>
+        </div>
+        <div class="imagecontainer">
+            <a href="/EventCategories/Data/3">
+                <img src="/images/comedy.jpg" alt="img" class="image">
+                <div class="overlay overlayFade">
+                    <div class="text">Entertainment</div>
+                </div>
+            </a>
+        </div><br />
+        <div class="imagecontainer">
+            <a href="/EventCategories/Data/4">
+                <img src="/images/bakesale.jpg" alt="img" class="image" />
+                <div class="overlay overlayFade">
+                    <div class="text">Fundraisers</div>
+                </div>
+            </a>
+        </div>
+        <div class="imagecontainer">
+            <a href="/EventCategories/Data/5">
+                <img src="/images/childrenactivities.jpg" alt="img" class="image" />
+                <div class="overlay overlayFade">
+                    <div class="text">Kids Activities</div>
+                </div>
+            </a>
+        </div>
+        <div class="imagecontainer">
+            <a href="/EventCategories/Data/6">
+                <img src="/images/sports.jpg" alt="img" class="image" />
+                <div class="overlay overlayFade">
+                    <div class="text">Sports & Outdoors</div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+    @*<div class="imagecontainer">
+            <img src="@Url.Content("~")/images/tourism.jpg" alt="img" class="image">
+            <div class="overlay overlayFade">
+                <div class="text">Tourism</div>
+            </div>
+        </div>*@
+    @*<div class="imagecontainer">
+            <img src="@Url.Content("~")/images/art.jpg" alt="img" class="image">
+            <div class="overlay overlayFade">
+                <div class="text">Arts & Culture</div>
+            </div>
+        </div>
+        <div class="imagecontainer">
+            <img src="@Url.Content("~")/images/comedy.jpg" alt="img" class="image">
+            <div class="overlay overlayFade">
+                <div class="text">Entertainment</div>
+            </div>
+        </div><br />
+        <div class="imagecontainer">
+            <img src="@Url.Content("~")/images/bakesale.jpg" alt="img" class="image" />
+            <div class="overlay overlayFade">
+                <div class="text">Fundraisers</div>
+            </div>
+        </div>
+        <div class="imagecontainer">
+            <img src="@Url.Content("~")/images/childrenactivities.jpg" alt="img" class="image" />
+            <div class="overlay overlayFade">
+                <div class="text">Kids Activities</div>
+            </div>
+        </div>
+        <div class="imagecontainer">
+            <img src="@Url.Content("~")/images/sports.jpg" alt="img" class="image" />
+            <div class="overlay overlayFade">
+                <div class="text">Sports & Outdoors</div>
+            </div>
+        </div>*@
+    @*<asp:GridView ID="GridView1" runat="server">
+            <Columns>
+                <asp:TemplateField>
+                    <HeaderTemplate>
+                        <div style="overflow: auto;">
+                            <img src="@Url.Content("~")/images/art.jpg" height="250" width="250" />
+                            <img src="@Url.Content("~")/images/bakesale.jpg" height="250" width="250" />
+                            <img src="@Url.Content("~")/images/blooddrive.jpg" height="250" width="250"/>
+                            <img src="@Url.Content("~")/images/careerfair.jpg" height="250" width="250" />
+                            <img src="@Url.Content("~")/images/childrenactivities.jpg" height="250" width="250" />
+                            <img src="@Url.Content("~")/images/comedy.jpg" height="250" width="250" />
+                            <img src="@Url.Content("~")/images/dance.jpg" height="250" width="250" />
+                            <img src="@Url.Content("~")/images/educationaladult.jpg" height="250" width="250" />
+                            <img src="@Url.Content("~")/images/educationalchildren.jpg" height="250" width="250" />
+                            <img src="@Url.Content("~")/images/fitnessandwellness.jpg" height="250" width="250" />
+                            <img src="@Url.Content("~")/images/freebees.jpg" height="250" width="250" />
+                            <img src="@Url.Content("~")/images/funrun.jpg" height="250" width="250"/>
+                            <img src="@Url.Content("~")/images/giveblood.jpg" height="250" width="250" />
+                            <img src="@Url.Content("~")/images/jobs.jpg" height="250" width="250" />
+                            <img src="@Url.Content("~")/images/karaoke.jpg" height="250" width="250" />
+                            <img src="@Url.Content("~")/images/music.jpg" height="250" width="250" />
+                            <img src="@Url.Content("~")/images/race.jpg" height="250" width="250" />
+                            <img src="@Url.Content("~")/images/restaurants.jpg" height="250" width="250" />
+                            <img src="@Url.Content("~")/images/sports.jpg" height="250" width="250" />
+                            <img src="@Url.Content("~")/images/teenactivities.jpg" height="250" width="250" />
+                            <img src="@Url.Content("~")/images/tourism.jpg" height="250" width="250" />
+                            <img src="@Url.Content("~")/images/volunteer.jpg" height="250" width="250" />
+
+                        </div>
+                    </HeaderTemplate>
+                </asp:TemplateField>
+            </Columns>
+        </asp:GridView>*@
+

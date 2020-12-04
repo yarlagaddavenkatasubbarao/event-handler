@@ -1,0 +1,68 @@
+﻿@model IEnumerable<ISC567Web.Models.EventCategory>
+
+@{
+    ViewData["Title"] = "Index";
+    string EventCategory = null;
+    EventCategory = Context.Request.Query["event-cat"];
+}
+
+<h2>Event Category Lists</h2>
+
+<p>
+    <a asp-action="Create">Create New Event Category</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.EventCategoryLogo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CategoryName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            if (EventCategory != null)
+            {
+                if (item.CategoryName.Contains(EventCategory))
+                {
+                    <tr>
+                        <td>
+                            <img src="@Url.Content("~")/images/@item.EventCategoryLogo" height="250px" />
+                        </td>
+                        <td>
+                            @Html.DisplayFor(model => item.CategoryName)
+                        <td>
+                            <a asp-action="Edit" asp-route-id="@item.EventCategoryID">Edit Category</a> |
+                            <a asp-action="Details" asp-route-id="@item.EventCategoryID">Event Category Details</a> |
+                            <a asp-action="Delete" asp-route-id="@item.EventCategoryID">Delete Event Category</a>
+                        </td>
+                    </tr>
+                }
+            }
+            else
+            {
+                <tr>
+                    <td>
+                        <img src="@Url.Content("~")/images/@item.EventCategoryLogo" height="250px" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => item.CategoryName)
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.EventCategoryID" class=" btn btn-primary">Edit Category</a> <br />
+                        <a asp-action="Details" asp-route-id="@item.EventCategoryID" class=" btn btn-primary">Event Category Details</a> <br />
+                        <a asp-action="Delete" asp-route-id="@item.EventCategoryID" class=" btn btn-danger">Delete Event Category</a>
+                    </td>
+                </tr>
+            }
+
+        }
+    </tbody>
+
+</table>
+
+

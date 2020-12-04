@@ -1,0 +1,40 @@
+﻿.title {
+   font-family: sans-serif;
+    color: black;
+}
+.imagecontainer{
+    position: relative;
+    width: 250px; 
+    height: 250px;
+    display: inline-block;
+}
+.image{
+    display: block; 
+    width: 250px;
+    height: 250px;
+}
+.overlay{
+    position: absolute;
+    transition: all .3s ease;
+    opacity: 0;
+    background-color: #eee;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.imagecontainer:hover .overlayFade{
+    opacity: .7;
+}
+.text{
+    color: black;
+    font-family: sans-serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+}
+
+   
+

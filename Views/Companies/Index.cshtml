@@ -1,0 +1,35 @@
+﻿@model IEnumerable<ISC567Web.Models.Company>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Company Names</h2>
+
+<p>
+    <a asp-action="Create">Create New Event Company</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CompanyName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CompanyID" class=" btn btn-primary">Edit Company</a> <br />
+                <a asp-action="Details" asp-route-id="@item.CompanyID" class=" btn btn-primary">Company Details</a> <br />
+                <a asp-action="Delete" asp-route-id="@item.CompanyID" class=" btn btn-danger">Delete Company</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
